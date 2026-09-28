@@ -148,11 +148,8 @@ Offers an interactive command-line interface to easily launch maintenance routin
 ---
 
 ### Option 7: Quick Scan Drive C (CHKDSK)
-![Uploading scan_c_drive.png…]()
 
-
-
-![Quick Scan Drive C](PLACEHOLDER_IMAGE_CHKDSK)
+![Quick Scan Drive C](https://github.com/user-attachments/assets/a0264c4d-6ac5-48a2-be96-0878c5920c7c)
 
 #### Operations Performed:
 - Executes `chkdsk C:` in read-only mode.
