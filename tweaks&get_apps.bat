@@ -36,6 +36,5 @@ if exist "Winhance.ps1" (
 pause
 
 :exit_script
-exit /b
-
 :eof
+
