@@ -11,21 +11,38 @@ A collection of Windows batch scripts and utilities designed to streamline syste
 ### 1. Main_batch.bat (Main Menu)
 Offers an interactive command-line interface to easily launch maintenance routines, icon fixes, and system utilities.
 
-![Main Menu](https://github.com/user-attachments/assets/041bf49a-24e4-4566-89ae-6c9430e2ea54)
+![Main Menu](https://github.com/user-attachments/assets/4b0c7b53-e154-436c-986b-5c980163ca34)
 
 #### Key Options Menu Structure:
-1. **Create Special Folders (`Special_Folders.bat`)**: Generates CLSID system shortcuts and launch scripts.
-2. **Refresh Icons (`refresh_icons.bat`)**: Rebuilds the icon cache and thumbnail databases.
-3. **Windows Maintenance (`windows_maintenance_script.bat`)**: Runs full system cleanup, temp file removal, and network optimization.
-4. **Chris Titus Tech's Windows Utility (`winutil.ps1`)**: Launches the PowerShell WinUtil GUI for system tweaks, software management, and debloating.
-5. **System Repairs (SFC / DISM)**: Executes system file integrity checks (`sfc /scannow`) and DISM image health cleanup/restoration (`CheckHealth`, `ScanHealth`, `RestoreHealth`).
-6. **Restart Audio Services**: Resets and restarts `audiosrv` and `AudioEndpointBuilder` services to fix audio playback issues.
-7. **Quick Scan Drive C (CHKDSK)**: Performs a non-destructive drive error scan (`chkdsk C:`) to check for file system anomalies.
+1. **Active Windows & Office (`MAS_AIO.cmd`)**: Active Your Windows and Office
+2. **Create Special Folders (`Special_Folders.bat`)**: Generates CLSID system shortcuts and launch scripts.
+3. **Refresh Icons (`refresh_icons.bat`)**: Rebuilds the icon cache and thumbnail databases.
+4. **Windows Maintenance (`windows_maintenance_script.bat`)**: Runs full system cleanup, temp file removal, and network optimization.
+5. **Chris Titus Tech's Windows Utility (`winutil.ps1`)**: Launches the PowerShell WinUtil GUI for system tweaks, software management, and debloating.
+6. **System Repairs (SFC / DISM)**: Executes system file integrity checks (`sfc /scannow`) and DISM image health cleanup/restoration (`CheckHealth`, `ScanHealth`, `RestoreHealth`).
+7. **Restart Audio Services**: Resets and restarts `audiosrv` and `AudioEndpointBuilder` services to fix audio playback issues.
+8. **Quick Scan Drive C (CHKDSK)**: Performs a non-destructive drive error scan (`chkdsk C:`) to check for file system anomalies.
 0. **Exit**: Closes the script menu interface.
 
 ---
 
-### Option 1: Special_Folders.bat (Special Folders & System Launchers)
+### Option 1: MAS_AIO.cmd (Active Windows & Office)
+
+![Active Windows & Office](https://github.com/user-attachments/assets/344eaa1f-77ff-4d0d-831a-df6b7da4811a)
+
+#### Operations Performed:
+- **Automated PowerShell Execution:**
+  - Configures execution policy bypass to run activation scripts seamlessly without security prompts.
+- **Online Script Retrieval:**
+  - Fetches and executes the latest official [Microsoft Activation Scripts (MAS)](https://github.com/massgravel/Microsoft-Activation-Scripts) via `https://get.activated.win`.
+- **HWID & Ohook Activation Support:**
+  - Triggers the official interactive MAS CLI menu for permanent Digital License (HWID) activation for Windows and Ohook permanent activation for Microsoft Office.
+- **KMS / License Renewal:**
+  - Provides fallback options for KMS38 and Online KMS activation routines for legacy and volume-licensed systems.
+
+---
+
+### Option 2: Special_Folders.bat (Special Folders & System Launchers)
 
 ![Special Folders](https://github.com/user-attachments/assets/a70b8446-d3d3-4cd9-ac77-02d555b5fa4f)
 
@@ -62,7 +79,7 @@ Offers an interactive command-line interface to easily launch maintenance routin
 
 ---
 
-### Option 2: refresh_icons.bat (Icon & Cache Refresh)
+### Option 3: refresh_icons.bat (Icon & Cache Refresh)
 
 ![Refresh Icons](https://github.com/user-attachments/assets/05f97b7e-b1e2-4637-add3-4e613151d13a)
 
@@ -75,7 +92,7 @@ Offers an interactive command-line interface to easily launch maintenance routin
 
 ---
 
-### Option 3: windows_maintenance_script.bat (System Maintenance)
+### Option 4: windows_maintenance_script.bat (System Maintenance)
 
 ![Windows Maintenance](https://github.com/user-attachments/assets/05b112c5-5a2f-488b-9ab7-8a9497e9525a)
 
@@ -112,17 +129,27 @@ Offers an interactive command-line interface to easily launch maintenance routin
 
 ---
 
-### Option 4: Chris Titus Tech's Windows Utility (`winutil.ps1`)
+### Option 5: Windows Utility & System Tweaks (winutil & Winhance)
 
 ![Chris Titus Tech Utility](https://github.com/user-attachments/assets/c554a9cc-9e01-45cc-b013-889f8580e849)
+![Winhance Utility](https://github.com/user-attachments/assets/02efbe6a-e4d4-4d71-903d-34a69f42fb79)
 
 #### Operations Performed:
-- Downloads and executes Chris Titus Tech's Windows Utility GUI directly via PowerShell (`iwr -useb https://christitus.com/win | iex`).
-- Provides centralized tools for Windows debloating, installing essential software packages, configuring system tweaks, and managing Windows Update policies.
+- **Chris Titus Tech Windows Utility (CTT WinUtil):**
+  - **Automated PowerShell Launch:** Downloads and executes the CTT GUI directly using `iwr -useb https://christitus.com/win | iex`.
+  - **Software Installation:** Streamlines mass installation of essential software packages and desktop applications via Winget and Chocolatey.
+  - **System Tweaks & Debloating:** Provides core OS optimizations, telemetries removal, background services control, and power scheme enhancements.
+  - **Windows Update Management:** Offers advanced controls to delay, security-lock, or restore default Windows Update policies.
+
+- **Winhance System Optimization Utility:**
+  - **Automated PowerShell Launch:** Fetches and runs the latest release directly via `iwr -useb https://winhance.net | iex`.
+  - **Modern UI & Fine-Grained Tweaks:** Provides an intuitive interface for advanced Windows 10/11 customization and privacy enhancements.
+  - **Bloatware Removal:** Scans and purges unwanted pre-installed UWP apps and system components.
+  - **Performance & Gaming Tuning:** Applies targeted registry modifications to reduce input latency, optimize resource allocation, and disable telemetry services.
 
 ---
 
-### Option 5: System Repairs (SFC / DISM)
+### Option 6: System Repairs (SFC / DISM)
 
 ![System Repairs](https://github.com/user-attachments/assets/040b879e-48f2-4010-b684-8ff691028e7a)
 
@@ -136,7 +163,7 @@ Offers an interactive command-line interface to easily launch maintenance routin
 
 ---
 
-### Option 6: Restart Audio Services
+### Option 7: Restart Audio Services
 
 ![Restart Audio Services](https://github.com/user-attachments/assets/b384c7a9-a6ae-4fa1-bc26-56cb32bcd716)
 
@@ -147,7 +174,7 @@ Offers an interactive command-line interface to easily launch maintenance routin
 
 ---
 
-### Option 7: Quick Scan Drive C (CHKDSK)
+### Option 8: Quick Scan Drive C (CHKDSK)
 
 ![Quick Scan Drive C](https://github.com/user-attachments/assets/a0264c4d-6ac5-48a2-be96-0878c5920c7c)
 
