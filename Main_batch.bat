@@ -15,27 +15,38 @@ cls
 echo ============================================
 echo               Main Menu
 echo ============================================
-echo 1. Create Special Folders (Special_Folders.bat)
-echo 2. Refresh Icons (refresh_icons.bat)
-echo 3. Windows Maintenance (windows_maintenance_script.bat)
-echo 4. Windows Utility and Get Apps (tweaks&get_apps.bat)
-echo 5. System Repairs (SFC / DISM)
-echo 6. Restart Audio Services
-echo 7. Quick Scan Drive C (CHKDSK)
+echo 1. Activate Windows / Office (windows_maintenance_script.bat)
+echo 2. Create Special Folders (Special_Folders.bat)
+echo 3. Refresh Icons (refresh_icons.bat)
+echo 4. Windows Maintenance (windows_maintenance_script.bat)
+echo 5. Windows Utility and Get Apps (tweaks_get_apps.bat)
+echo 6. System Repairs (SFC / DISM)
+echo 7. Restart Audio Services
+echo 8. Quick Scan Drive C (CHKDSK)
 echo 0. Exit
 echo ============================================
-set /p choice="Select an option (0-7): "
+set /p choice="Select an option (0-8): "
 
-if "%choice%"=="1" goto run_create_special_folders
-if "%choice%"=="2" goto run_refresh_icons
-if "%choice%"=="3" goto run_windows_maintenance
-if "%choice%"=="4" goto run_winutilis
-if "%choice%"=="5" goto run_sys_repair
-if "%choice%"=="6" goto run_restart_audio
-if "%choice%"=="7" goto run_chkdsk
+if "%choice%"=="1" goto run_microsoft_activation_scripts
+if "%choice%"=="2" goto run_create_special_folders
+if "%choice%"=="3" goto run_refresh_icons
+if "%choice%"=="4" goto run_windows_maintenance
+if "%choice%"=="5" goto run_winutilis
+if "%choice%"=="6" goto run_sys_repair
+if "%choice%"=="7" goto run_restart_audio
+if "%choice%"=="8" goto run_chkdsk
 if "%choice%"=="0" goto exit_script
 
 echo Invalid choice. Try again.
+pause
+goto menu
+
+:run_microsoft_activation_scripts
+if exist "MAS_AIO.cmd" (
+    call "MAS_AIO.cmd"
+) else (
+    echo File God_Tools.bat not found.
+)
 pause
 goto menu
 
