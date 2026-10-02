@@ -18,7 +18,7 @@ echo ============================================
 echo 1. Create Special Folders (Special_Folders.bat)
 echo 2. Refresh Icons (refresh_icons.bat)
 echo 3. Windows Maintenance (windows_maintenance_script.bat)
-echo 4. Chris Titus Tech's Windows Utility (winutil.ps1)
+echo 4. Windows Utility and Get Apps (tweaks&get_apps.bat)
 echo 5. System Repairs (SFC / DISM)
 echo 6. Restart Audio Services
 echo 7. Quick Scan Drive C (CHKDSK)
@@ -67,10 +67,10 @@ pause
 goto menu
 
 :run_winutilis
-if exist "winutil.ps1" (
-    powershell.exe -ExecutionPolicy Bypass -File "%~dp0winutil.ps1"
+if exist "tweaks&get_apps.bat" (
+    call "tweaks&get_apps.bat"
 ) else (
-    echo File winutil.ps1 not found.
+    echo File tweaks&get_apps.bat not found.
 )
 pause
 goto menu
